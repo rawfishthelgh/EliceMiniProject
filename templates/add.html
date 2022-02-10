@@ -18,25 +18,14 @@
  
 <body>
     <h3>게시판</h3>
-    <h4>수정</h4>
-    <form action="" method="POST">
+    <h4>추가</h4>
+    <form action="/add" method="POST">
         이름<br>
         <input type="text" name="name" /><br>
         내용<br>
         <input type="text" name="context" style="text-align:center; width:400px; height:100px;" /><br><br>
-        <input type="submit" value="수 정" /><br>
+        <input type="submit" value="게 시" /><br>
     </form>
-    <h4>기존</h4>
-    <table border=1 width="600" align="center">
-        <thead>
-            <td>이름</td>
-            <td>내용</td>
-        </thead>
-        <tr>
-            <td>{{ row[0][0] }}</td>
-            <td>{{ row[0][1] }}</td>
-        </tr>
-    </table>
 </body>
  
 </html>

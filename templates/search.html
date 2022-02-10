@@ -17,25 +17,26 @@
 </head>
  
 <body>
-    <h3>게시판</h3>
-    <h4>수정</h4>
-    <form action="" method="POST">
-        이름<br>
-        <input type="text" name="name" /><br>
-        내용<br>
-        <input type="text" name="context" style="text-align:center; width:400px; height:100px;" /><br><br>
-        <input type="submit" value="수 정" /><br>
+    <form action="/search" method="POST">
+        <input type="text" name="name" />
+        <input type="submit" value="검 색" /><br>
     </form>
-    <h4>기존</h4>
+    <h4>검색결과</h4>
+    {% if rows%}
     <table border=1 width="600" align="center">
         <thead>
             <td>이름</td>
             <td>내용</td>
         </thead>
+        {% for row in rows %}
         <tr>
-            <td>{{ row[0][0] }}</td>
-            <td>{{ row[0][1] }}</td>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
         </tr>
+        {% endfor %}
+        {% else %}
+        <p> 검색결과가 없습니다. </p>
+        {% endif %}
     </table>
 </body>
  
